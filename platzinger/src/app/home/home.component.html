@@ -1,5 +1,17 @@
 <!--ngFOr un ciclo por los usuarios-->
-<p *ngFor="let user of friends">
-    {{user.nick}} - {{user.email}}
-</p>
+<h2>Amigos</h2>
+<ng-container  *ngFor="let user of friends">
+        <p *ngIf="user.friend">
+                {{user.nick}} - {{user.email}}
+        </p>
+</ng-container>
+<h2>Resto</h2>
+<ng-container *ngFor="let user of friends">
+    <p *ngIf="!user.friend">
+        {{user.nick}} - {{user.email}}
+    </p>
+</ng-container>
+
+
+
 
